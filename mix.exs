@@ -9,6 +9,8 @@ defmodule Apportion.Mixfile do
       build_embedded: Mix.env == :prod,
       start_permanent: Mix.env == :prod,
       deps: deps(),
+      package: package(),
+      description: "Elixir implementation for apportionment",
       test_coverage: [tool: ExCoveralls]
     ]
   end
@@ -35,6 +37,14 @@ defmodule Apportion.Mixfile do
       {:ex_doc, "~> 0.13", only: :dev},
       {:excoveralls, "~> 0.5", only: :test},
       {:poison, "~> 2.2"}
+    ]
+  end
+
+  defp package do
+    [
+      maintainers: ["Gary Fleshman"],
+      licenses: ["MIT"],
+      links: %{github: "https://github.com/garyf/apportion_ex"}
     ]
   end
 end
